@@ -1,0 +1,63 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Console.WriteLine("Sayı Gir : ");
+            int sayı = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Üs Gir : ");
+            int üs = Convert.ToInt32(Console.ReadLine());
+
+            //instance
+            islemler islem = new islemler();
+
+            Console.WriteLine(islem.exp(sayı,üs));
+
+            //extension methodlar
+            string ifade = "Erkut AAA";
+
+
+            Console.WriteLine(ifade.CheckSpaces());
+
+
+
+
+
+            Console.ReadKey();
+        }
+        
+    }
+
+    class islemler 
+    {
+        public int exp(int sayı, int üs)
+        {
+            if (üs < 2)
+                return sayı;
+            return exp(sayı,üs-1)*sayı;
+        }
+    }
+    public static class Extension 
+    {
+        public static bool CheckSpaces(this string param) 
+        {
+
+
+
+            return param.Contains(" ");        
+        }
+    
+    
+    
+    
+    
+    }
+}
